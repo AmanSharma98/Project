@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Sync Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <aside class="w-1/4 bg-white shadow-md">
+            <h1 class="text-xl font-semibold p-4">Schedule Sync</h1>
+            <ul class="space-y-2">
+                <li class="p-4 hover:bg-gray-200 cursor-pointer">Dashboard</li>
+                <li class="p-4 hover:bg-gray-200 cursor-pointer">Calendar</li>
+                <li class="p-4 hover:bg-gray-200 cursor-pointer">Inbox</li>
+                <li class="p-4 hover:bg-gray-200 cursor-pointer">Chat</li>
+            </ul>
+        </aside>
+        <main class="w-3/4 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <span>Today</span>
+                    <h2 class="text-2xl font-bold">July 17</h2>
+                    <p class="text-gray-500">7:10 PM IST</p>
+                </div>
+                <div class="flex space-x-4">
+                    <span class="bg-gray-200 text-gray-800 py-1 px-3 rounded">8 Total Class</span>
+                    <span class="bg-gray-200 text-gray-800 py-1 px-3 rounded">3 Total Lectures left</span>
+                    <span class="bg-green-200 text-green-800 py-1 px-3 rounded">5 Meeting Done!!</span>
+                    <button class="bg-purple-600 text-white py-1 px-3 rounded">Add Adjustment</button>
+                </div>
+            </div>
+
+            <section class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Upcoming Adjustments</h3>
+                <div class="bg-white p-4 rounded shadow mb-4">
+                    <h4 class="font-semibold">Mr. Baljeet session (AWT)</h4>
+                    <p>12:50 PM → 03:20 PM IST (5H Left)</p>
+                    <p class="text-gray-500">CVR-311 (AWT) <a href="#" class="text-blue-500">Get location</a></p>
+                    <p>Lecture information | Other Response Status</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h4 class="font-semibold">Mrs. Shivani session (DSA)</h4>
+                    <p>01:40 PM → 02:30 PM IST (2H Left)</p>
+                    <p class="text-gray-500">CVR-308 (DSA) <a href="#" class="text-blue-500">Get location</a></p>
+                    <p>Lecture information | Other Response status</p>
+                </div>
+            </section>
+
+            <section class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Today's Schedules</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Advance Web Technologies</h4>
+                        <p>09:30 AM → 11:10 AM IST</p>
+                        <p class="text-gray-500">CVR-311 (AWT)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Full Stack Development</h4>
+                        <p>12:50 PM → 02:30 PM IST</p>
+                        <p class="text-gray-500">CVR-303 (FSD)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Advance Web Technologies-(P)</h4>
+                        <p>02:30 PM → 04:10 PM IST</p>
+                        <p class="text-gray-500">CVR-304 (AWT-P)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="text-xl font-semibold mb-2">Adjustment Proposals</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Mr. Neel session</h4>
+                        <p>12:30 PM → 04:36 PM IST (Free Slot)</p>
+                        <p class="text-gray-500">CVR-311 (ETHICS) <a href="#" class="text-blue-500">Get location</a></p>
+                        <div class="flex space-x-2">
+                            <button class="border border-green-500 text-green-500 py-1 px-2 rounded">Accept</button>
+                            <button class="border border-red-500 text-red-500 py-1 px-2 rounded">Reject</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Mr. Manik session</h4>
+                        <p>12:30 PM → 04:36 PM IST (Free Slot)</p>
+                        <p class="text-gray-500">CVR-303 (AWT)</p>
+                        <div class="flex space-x-2">
+                            <button class="border border-green-500 text-green-500 py-1 px-2 rounded">Accept</button>
+                            <button class="border border-red-500 text-red-500 py-1 px-2 rounded">Reject</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold">Mr. Gaurav session</h4>
+                        <p>12:30 PM → 04:36 PM IST (Free Slot)</p>
+                        <p class="text-gray-500">CVR-311 (AAD)</p>
+                        <div class="flex space-x-2">
+                            <button class="border border-green-500 text-green-500 py-1 px-2 rounded">Accept</button>
+                            <button class="border border-red-500 text-red-500 py-1 px-2 rounded">Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

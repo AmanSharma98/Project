@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Sync</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        body { 
+            background-image: url('../Image/background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .background-image { 
+            background-image: url('../Image/background1.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+</style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="flex bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
+        <div class="w-1/2 background-image hidden md:block"></div>
+        <div class="w-full md:w-1/2 p-8">
+            <h1 class="text-3xl font-bold mb-6 text-center">Welcome</h1>
+            <!-- Username Input -->
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">User Name</label>
+                <input type="text" id="username" placeholder="Enter your Email id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" placeholder="Enter your Password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <!-- Security Text Input -->
+            <div class="mb-4">
+                <label for="security-text" class="block text-sm font-medium text-gray-700">Security Text</label>
+                <div class="flex items-center">
+                    <input type="text" id="security-text" placeholder="Enter the shown text" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    <span class="ml-2 px-3 py-2 bg-gray-100 border border-gray-300 rounded-md">mkfxc</span>
+                </div>
+            </div>
+            <!-- Remember Me Checkbox -->
+            <div class="mb-6">
+                <label class="flex items-center">
+                    <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600">
+                    <span class="ml-2 text-sm text-gray-700">Remember me on this computer</span>
+                </label>
+            </div>
+            <!-- Login Button -->
+            <button onclick="validateLogin()" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                LOG IN
+            </button>
+
+            <!-- Create New Account Button -->
+            <button onclick="window.location.href='register.html'" class="w-full mt-4 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                CREATE NEW ACCOUNT
+            </button>
+
+            <!-- Forgot Password Link -->
+            <p class="mt-4 text-center">
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-500">Forgot Password?</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        async function validateLogin() {
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please fill in all fields before logging in.");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
