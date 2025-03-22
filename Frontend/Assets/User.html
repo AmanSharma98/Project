@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge, and Firefox */
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        /* Custom CSS for the scrollable container */
+        .scrollable-container {
+            overflow-x: auto; /* Change to horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping of child elements */
+            display: flex; /* Align children in a row */
+            gap: 16px; /* Adjust the gap between cards as needed */
+        }
+
+        /* Ensure the cards do not shrink and have a fixed width */
+        .scrollable-container > div {
+            flex: 0 0 auto; /* Prevent flex items from shrinking */
+            width: 400px; /* Fixed width for each card */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex">
+    <!-- Sidebar (Schedule Sync) -->
+    <aside class="flex flex-col min-h-screen w-64 shadow-lg p-4 border-r">
+        <!-- Title -->
+        <h1 class="text-3xl text-purple-700 font-semibold mb-4">Schedule Sync</h1> 
+        
+        <!-- Navigation Items -->
+        <div class="space-y-2">
+            <div class="flex items-center text-lg px-4 py-3 hover:bg-gray-200 rounded-lg">
+                <img src="./dashboard1.svg" alt="#" class="w-6 h-6 mr-2"> Dashboard
+            </div>
+            <div class="flex items-center text-lg px-4 py-3 hover:bg-gray-200 rounded-lg">
+                <img src="./solarcalendar.svg" alt="#" class="w-6 h-6 mr-2"> Calendar
+            </div>
+            <div class="flex items-center text-lg px-4 py-3 hover:bg-gray-200 rounded-lg">
+                <img src="./Leave.svg" alt="#" class="w-6 h-6 mr-2"> Apply Leave
+            </div>
+            <div class="flex items-center text-lg px-4 py-3 hover:bg-gray-200 rounded-lg">
+                <img src="./solarInbox.svg" alt="#" class="w-6 h-6 mr-2"> Inbox
+            </div>
+        </div>
+
+        <!-- Current View Section -->
+        <div class="mt-6">
+            <span class="text-gray-500 text-lg font-semibold opactiy-50">Current View</span>
+            <div class="mt-3 space-y-2">
+                <div class="bg-gray-100 text-gray-700 rounded-lg p-4 flex flex-col items-center hover:bg-gray-200  border hover:border-blue-500">
+                    <img src="./Meeting.svg" alt="" class="w-10 h-10">
+                    <span class="text-lg mt-3">Meetings</span>
+                </div>
+                <div class="bg-gray-100 text-gray-700 rounded-lg p-4 flex flex-col items-center hover:bg-gray-200 border hover:border-blue-500">
+                    <img src="./cloud.svg" alt="" class="w-10 h-10">
+                    <span class="text-lg mt-3">Scheduling</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Event Section -->
+        <div class="mt-6 rounded-lg shadow-md p-4 w-full">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-10 flex items-center justify-center">
+                    <img src="./calender.png" alt="" class="w-10">
+                </div>
+                <div>
+                    <h2 class="text-sm font-semibold">Upcoming Event</h2>
+                    <p class="text-sm text-red-500 font-medium truncate">Meeting at 10 AM</p>
+                </div>
+            </div>
+            <!-- Time Info -->
+            <div class="flex justify-between items-center mt-3">
+                <div class="text-center">
+                    <span class="text-lg font-bold">8:45</span>
+                    <div class="text-xs">AM</div>
+                </div>
+                <div class="text-gray-500">⇄</div>
+                <div class="text-center">
+                    <span class="text-lg font-bold">10:45</span>
+                    <div class="text-xs">AM</div>
+                </div>
+            </div>
+
+            <!-- Meeting Link -->
+            <a href="YOUR_MEETING_LINK" class="flex items-center justify-center bg-blue-500 text-white font-medium py-2 rounded-md mt-4">
+                <img src="./google-meet.svg" alt="Google Meet" class="w-4 h-4 mr-2">
+                Go to meet link
+            </a>
+        </div>
+    </aside>
+    <!-- Main Dashboard Content -->
+    <main class="flex-1 bg-white">
+        <!-- Top Navigation -->
+        <nav class="bg-white p-4 flex justify-between items-center px">
+            <!-- Left: Date and Time -->
+            <div class="flex  items-center space-x-2 gap-2 p-0">
+                <button class=" px-3 py-1 border rounded-md  text-sm font-sans">Today</button>
+                <div class="flex items-center border px-3 py-1 rounded-md space-x-2 text-sm">
+                    <span>July 17</span>
+                </div>
+                <div class="flex items-center border  rounded-md px-3 py-1 space-x-2 text-gray-600 text-sm">
+                    <span>⛅</span>
+                    <span>7:10 PM IST</span>
+                </div>
+            </div>
+
+            <!-- Right: Filter and Add Button -->
+            <div class="flex items-center space-x-2">
+                <!-- User Profle Button -->
+                <div class="flex p-2 items-center border space-x-2 justify-center rounded-full">
+                    <button class="flex items-center "><img src="./Profile.svg" alt="theme"></button>
+                </div>
+                <div class="flex items-center  px-3 py-1 border rounded-md space-x-2 text-sm">
+                  
+                    <button class=""><img src="./theme.svg" alt="theme" ></button>
+                </div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm">
+                    + Add Adjustment
+                </button>
+            </div>
+        </nav>
+        <!-- Dashboard Content Goes Here -->
+        <!-- STAT Cards Container -->
+        <div class="flex justify-between gap-2 w-full p-4">
+            <!-- Card 1 -->
+            <div class="flex flex-1 items-center border rounded-lg p-4 bg-white">
+                <img src="./calendar.svg" alt="" class="bg-blue-300 text-white p-3 rounded-full">
+                <div class="ml-4">
+                    <span class="text-2xl font-bold text-[#006FD5]">8</span>
+                    <br>
+                    <span class="text-sm text-[#006FD5]">Total Lecture</span>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="flex flex-1 items-center border rounded-lg p-4 bg-white">
+                <img src="./mdi-light--clock.svg" alt="" class="bg-purple-300 text-white p-3 rounded-full">
+                <div class="ml-4">
+                    <span class="text-2xl font-bold text-[#372980]">8</span>
+                    <br>
+                    <span class="text-sm text-[#372980]">Lectures Left</span>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="flex flex-1 items-center border rounded-lg p-4 bg-white">
+                <img src="./copy-success.svg" alt="" class="bg-green-300 text-white p-3 rounded-full">
+                <div class="ml-4">
+                    <span class="text-2xl font-bold text-[#03781D]">8</span>
+                    <br>
+                    <span class="text-sm text-[#03781D]">Meeting Done</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heading-->
+        <div class="flex p-4">
+            <h1 id="font" class="font-system-serif text-3xl font-semibold">Upcoming Adjustment’s</h1>
+        </div>
+        <!-- Cards DIV -->
+        <div id="Scrolling" class="flex overflow-x-auto no-scrollbar scroll-smooth pl-4 w-[1000px]">
+            <!-- Session Card 1 -->
+            <div class="bg-white border rounded-lg p-4 w-[400px]">
+                <div class="flex items-center">
+                    <span class="text-green-600 text-xl">●</span>
+                    <h2 class="text-lg ml-2">Mr. Baljeet session (AWT)</h2>
+                </div>
+                <p class="text-gray-600 my-2 flex items-center">
+                    <img src="./clock.svg" alt="Clock" class="mr-2"> 
+                    12:50 PM → 03:20 PM IST
+                </p>
+                <p class="text-gray-600 flex items-center">
+                    <img src="./location.svg" alt="Location" class="mr-2"> 
+                    CVR-311 (AWT)
+                </p>
+                <div class="mt-4 text-gray-500 flex items-center space-x-2 border-t pt-2">
+                    <img src="./sun.svg" alt="Status" class="mr-2"> 
+                    <span>Lecture infomation</span>
+                    <img src="./airplane.svg" alt="Status" class="mr-2"> 
+                    <span>Other Response Status</span>
+                </div>
+            </div>
+            <!-- Session Card 2 -->
+            <div class="bg-white border rounded-lg p-4 w-[400px]">
+                <div class="flex items-center">
+                    <span class="text-green-600 text-xl">●</span>
+                    <h2 class="text-lg ml-2">Mr. Baljeet session (AWT)</h2>
+                </div>
+                <p class="text-gray-600 my-2 flex items-center">
+                    <img src="./clock.svg" alt="Clock" class="mr-2"> 
+                    12:50 PM → 03:20 PM IST
+                </p>
+                <p class="text-gray-600 flex items-center">
+                    <img src="./location.svg" alt="Location" class="mr-2"> 
+                    CVR-311 (AWT)
+                </p>
+                <div class="mt-4 text-gray-500 flex items-center space-x-2 border-t pt-2">
+                    <img src="./sun.svg" alt="Status" class="mr-2"> 
+                    <span>Lecture infomation</span>
+                    <img src="./airplane.svg" alt="Status" class="mr-2"> 
+                    <span>Other Response Status</span>
+                </div>
+            </div>
+
+            <!-- Session Card 3 -->
+            <div class="bg-white border rounded-lg p-4 w-[400px]">
+                <div class="flex items-center">
+                    <span class="text-green-600 text-xl">●</span>
+                    <h2 class="text-lg ml-2">Mr. Baljeet session (AWT)</h2>
+                </div>
+                <p class="text-gray-600 my-2 flex items-center">
+                    <img src="./clock.svg" alt="Clock" class="mr-2"> 
+                    12:50 PM → 03:20 PM IST
+                </p>
+                <p class="text-gray-600 flex items-center">
+                    <img src="./location.svg" alt="Location" class="mr-2"> 
+                    CVR-311 (AWT)
+                </p>
+                <div class="mt-4 text-gray-500 flex items-center space-x-2 border-t pt-2">
+                    <img src="./sun.svg" alt="Status" class="mr-2"> 
+                    <span>Lecture infomation</span>
+                    <img src="./airplane.svg" alt="Status" class="mr-2"> 
+                    <span>Other Response Status</span>
+                </div>
+            </div>
+            <!-- Section Card 4 -->
+            <div class="bg-white border rounded-lg p-4 w-[400px]">
+                <div class="flex items-center">
+                    <span class="text-green-600 text-xl">●</span>
+                    <h2 class="text-lg ml-2">Mr. Baljeet session (AWT)</h2>
+                </div>
+                <p class="text-gray-600 my-2 flex items-center">
+                    <img src="./clock.svg" alt="Clock" class="mr-2"> 
+                    12:50 PM → 03:20 PM IST
+                </p>
+                <p class="text-gray-600 flex items-center">
+                    <img src="./location.svg" alt="Location" class="mr-2"> 
+                    CVR-311 (AWT)
+                </p>
+                <div class="mt-4 text-gray-500 flex items-center space-x-2 border-t pt-2">
+                    <img src="./sun.svg" alt="Status" class="mr-2"> 
+                    <span>Lecture infomation</span>
+                    <img src="./airplane.svg" alt="Status" class="mr-2"> 
+                    <span>Other Response Status</span>
+                </div>
+            </div>
+            <!-- section card 5 -->
+            <div class="bg-white border rounded-lg p-4 w-[400px]">
+                <div class="flex items-center">
+                    <span class="text-green-600 text-xl">●</span>
+                    <h2 class="text-lg ml-2">Mr. Baljeet session (AWT)</h2>
+                </div>
+                <p class="text-gray-600 my-2 flex items-center">
+                    <img src="./clock.svg" alt="Clock" class="mr-2"> 
+                    12:50 PM → 03:20 PM IST
+                </p>
+                <p class="text-gray-600 flex items-center">
+                    <img src="./location.svg" alt="Location" class="mr-2"> 
+                    CVR-311 (AWT)
+                </p>
+                <div class="mt-4 text-gray-500 flex items-center space-x-2 border-t pt-2">
+                    <img src="./sun.svg" alt="Status" class="mr-2"> 
+                    <span>Lecture infomation</span>
+                    <img src="./airplane.svg" alt="Status" class="mr-2"> 
+                    <span>Other Response Status</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

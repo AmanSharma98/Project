@@ -1,0 +1,31 @@
+/* System Fonts */
+.font-system-sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .font-system-serif {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .scrollable-container {
+    max-width: 100%;             /* Set maximum width of the container */
+    overflow-x: auto;            /* Enable horizontal scrolling */
+    overflow-y: hidden;          /* Disable vertical scrolling */
+    white-space: nowrap;         /* Prevent child elements from wrapping */
+    padding: 1rem;               /* Add padding for spacing */
+    border: 1px solid #E5E7EB;   /* Light gray border */
+    border-radius: 0.5rem;       /* Rounded corners */
+    background-color: white;     /* Background color */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Optional: Hide scrollbar for aesthetic reasons */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+/* Hide scrollbar for IE and Edge */
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
